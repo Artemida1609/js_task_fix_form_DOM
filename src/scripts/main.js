@@ -3,6 +3,7 @@
 // write code here
 const elements = document.getElementsByTagName('input');
 const inputParents = document.getElementsByClassName('field');
+const labels = document.getElementsByTagName('label');
 
 for (const element of elements) {
   const label = document.createElement('label');
@@ -18,8 +19,6 @@ for (const element of elements) {
   element.setAttribute('placeholder', inputName.toUpperCase());
 }
 
-for (const inputParent of inputParents) {
-  const label = document.getElementsByTagName('label');
-
-  inputParent.appendChild(label);
+for (let i = 0; i < inputParents.length; i++) {
+  inputParents[i].appendChild(labels[i]);
 }
