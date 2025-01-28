@@ -2,16 +2,24 @@
 
 // write code here
 const elements = document.getElementsByTagName('input');
+const inputParents = document.getElementsByClassName('field');
 
 for (const element of elements) {
   const label = document.createElement('label');
-  const inputId = element.id;
-  const inputName = element.name;
 
   label.className = 'field-label';
 
+  const inputId = element.id;
+  const inputName = element.name;
+
+  label.textContent = inputName;
   label.setAttribute('for', inputId);
-  label.setAttribute('textContent', inputName);
-  element.appendChild(label);
-  element.setAttribute('placeholder', inputName);
+
+  element.setAttribute('placeholder', inputName.toUpperCase());
+}
+
+for (const inputParent of inputParents) {
+  const label = document.getElementsByTagName('label');
+
+  inputParent.appendChild(label);
 }
